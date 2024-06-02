@@ -19,17 +19,238 @@ from API.erb4u_api import ERB4U
 import time 
 
 NUM_BOARDS = 9
-COM_PORT = "COM9"
+NUM_RELAY = 8
+COM_PORT = "COM4"
 relay_boards = ERB4U(port=COM_PORT)
 relay_boards.connect()
 
-for _ in range(3):
-    time.sleep(1)
-    for board_id in range(NUM_BOARDS):
-        relay_boards.turn_on_all_relays(board_num=board_id)
 
-    time.sleep(1)
+"""
+All ON, all OFF
+"""
+for _ in range(2):
     for board_id in range(NUM_BOARDS):
+        # board_id = NUM_BOARDS - board_id - 1
+        relay_boards.turn_on_all_relays(board_num=board_id)
+    time.sleep(1)
+
+    for board_id in range(NUM_BOARDS):
+        # board_id = NUM_BOARDS - board_id - 1
         relay_boards.turn_off_all_relays(board_num=board_id)
+    time.sleep(1)
+
+
+"""
+Turn ON/OFF like a rhombus
+"""
+for _ in range(2):
+    relay_boards.turn_on_all_relays(board_num=8)
+    relay_boards.turn_on_all_relays(board_num=6)
+    relay_boards.turn_on_all_relays(board_num=2)
+    relay_boards.turn_on_all_relays(board_num=0)
+    time.sleep(1)
+
+    relay_boards.turn_off_all_relays(board_num=8)
+    relay_boards.turn_off_all_relays(board_num=6)
+    relay_boards.turn_off_all_relays(board_num=2)
+    relay_boards.turn_off_all_relays(board_num=0)
+    relay_boards.turn_on_all_relays(board_num=7)
+    relay_boards.turn_on_all_relays(board_num=5)
+    relay_boards.turn_on_all_relays(board_num=3)
+    relay_boards.turn_on_all_relays(board_num=1)
+    time.sleep(1)
+
+
+    relay_boards.turn_off_all_relays(board_num=7)
+    relay_boards.turn_off_all_relays(board_num=5)
+    relay_boards.turn_off_all_relays(board_num=3)
+    relay_boards.turn_off_all_relays(board_num=1)
+
+
+
+
+
+
+
+"""
+Turn ON/OFF horizontally
+"""
+relay_boards.turn_on_all_relays(board_num=0)
+relay_boards.turn_on_all_relays(board_num=1)
+relay_boards.turn_on_all_relays(board_num=2)
+time.sleep(1)
+
+relay_boards.turn_off_all_relays(board_num=0)
+relay_boards.turn_off_all_relays(board_num=1)
+relay_boards.turn_off_all_relays(board_num=2)
+relay_boards.turn_on_all_relays(board_num=3)
+relay_boards.turn_on_all_relays(board_num=4)
+relay_boards.turn_on_all_relays(board_num=5)
+time.sleep(1)
+
+relay_boards.turn_off_all_relays(board_num=3)
+relay_boards.turn_off_all_relays(board_num=4)
+relay_boards.turn_off_all_relays(board_num=5)
+relay_boards.turn_on_all_relays(board_num=6)
+relay_boards.turn_on_all_relays(board_num=7)
+relay_boards.turn_on_all_relays(board_num=8)
+time.sleep(1)
+
+relay_boards.turn_off_all_relays(board_num=6)
+relay_boards.turn_off_all_relays(board_num=7)
+relay_boards.turn_off_all_relays(board_num=8)
+# time.sleep(1)
+
+
+# ----------------------------
+
+"""
+Turn ON/OFF vertically
+"""
+relay_boards.turn_on_all_relays(board_num=0)
+relay_boards.turn_on_all_relays(board_num=5)
+relay_boards.turn_on_all_relays(board_num=6)
+time.sleep(1)
+
+relay_boards.turn_off_all_relays(board_num=0)
+relay_boards.turn_off_all_relays(board_num=5)
+relay_boards.turn_off_all_relays(board_num=6)
+relay_boards.turn_on_all_relays(board_num=1)
+relay_boards.turn_on_all_relays(board_num=4)
+relay_boards.turn_on_all_relays(board_num=7)
+time.sleep(1)
+
+relay_boards.turn_off_all_relays(board_num=1)
+relay_boards.turn_off_all_relays(board_num=4)
+relay_boards.turn_off_all_relays(board_num=7)
+relay_boards.turn_on_all_relays(board_num=2)
+relay_boards.turn_on_all_relays(board_num=3)
+relay_boards.turn_on_all_relays(board_num=8)
+time.sleep(1)
+
+relay_boards.turn_off_all_relays(board_num=2)
+relay_boards.turn_off_all_relays(board_num=3)
+relay_boards.turn_off_all_relays(board_num=8)
+time.sleep(1)
+
+
+
+"""
+Turn ON/OFF vertically in sequence
+"""
+for relay_id in range(9):
+    relay_boards.turn_on_relay(board_num=0, relay_num=relay_id)
+    relay_boards.turn_on_relay(board_num=1, relay_num=relay_id)
+    relay_boards.turn_on_relay(board_num=2, relay_num=relay_id)
+    time.sleep(0.2)
+relay_boards.turn_off_all_relays(board_num=0)
+relay_boards.turn_off_all_relays(board_num=1)
+relay_boards.turn_off_all_relays(board_num=2)
+
+
+
+for relay_id in range(9):
+    relay_boards.turn_on_relay(board_num=3, relay_num=relay_id)
+    relay_boards.turn_on_relay(board_num=4, relay_num=relay_id)
+    relay_boards.turn_on_relay(board_num=5, relay_num=relay_id)
+    time.sleep(0.2)
+relay_boards.turn_off_all_relays(board_num=3)
+relay_boards.turn_off_all_relays(board_num=4)
+relay_boards.turn_off_all_relays(board_num=5)
+
+
+
+for relay_id in range(9):
+    relay_boards.turn_on_relay(board_num=6, relay_num=relay_id)
+    relay_boards.turn_on_relay(board_num=7, relay_num=relay_id)
+    relay_boards.turn_on_relay(board_num=8, relay_num=relay_id)
+    time.sleep(0.2)
+relay_boards.turn_off_all_relays(board_num=6)
+relay_boards.turn_off_all_relays(board_num=7)
+relay_boards.turn_off_all_relays(board_num=8)
+
+
+
+
+"""
+Turn ON/OFF vertically inwards
+"""
+for _ in range(2):
+    for relay_id in range(4):
+        relay_id = relay_id + 1
+        relay_boards.turn_on_relay(board_num=0, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=5, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=6, relay_num=relay_id)
+
+        relay_id = relay_id + 4
+        relay_boards.turn_on_relay(board_num=2, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=3, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=8, relay_num=relay_id)
+        time.sleep(0.2)
+
+    for relay_id in range(4):
+        relay_id = relay_id + 1
+        relay_boards.turn_off_relay(board_num=0, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=5, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=6, relay_num=relay_id)
+
+        relay_id = relay_id + 4
+        relay_boards.turn_off_relay(board_num=2, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=3, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=8, relay_num=relay_id)
+        time.sleep(0.2)
+
+
+    for relay_id in range(4):
+        relay_id = relay_id + 5
+        relay_boards.turn_on_relay(board_num=0, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=5, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=6, relay_num=relay_id)
+
+        relay_id = relay_id - 4
+        relay_boards.turn_on_relay(board_num=2, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=3, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=8, relay_num=relay_id)
+        time.sleep(0.2)
+
+
+    for relay_id in range(4):
+        relay_id = relay_id + 5
+        relay_boards.turn_off_relay(board_num=0, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=5, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=6, relay_num=relay_id)
+
+        relay_id = relay_id - 4
+        relay_boards.turn_off_relay(board_num=2, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=3, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=8, relay_num=relay_id)
+        time.sleep(0.2)
+
+    for relay_id in range(4):
+        relay_id = relay_id + 1
+        relay_boards.turn_on_relay(board_num=1, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=4, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=7, relay_num=relay_id)
+
+        relay_id = relay_id + 4
+        relay_boards.turn_on_relay(board_num=1, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=4, relay_num=relay_id)
+        relay_boards.turn_on_relay(board_num=7, relay_num=relay_id)
+        time.sleep(0.2)
+
+
+    for relay_id in range(4):
+        relay_id = relay_id + 1
+        relay_boards.turn_off_relay(board_num=1, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=4, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=7, relay_num=relay_id)
+
+        relay_id = relay_id + 4
+        relay_boards.turn_off_relay(board_num=1, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=4, relay_num=relay_id)
+        relay_boards.turn_off_relay(board_num=7, relay_num=relay_id)
+        time.sleep(0.2)
+
+
 
 

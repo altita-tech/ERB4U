@@ -39,7 +39,7 @@ class ERB4U:
         self.ser.write(cmd)
         relay_state = self.read_serial_data()
         time.sleep(self.TIME_DELAY)
-        return relay_state
+        return int(relay_state)
 
     def read_all_relays_states(self, board_num: int) -> str:
         cmd = bytes([board_num, 0x00, 0xA0, self.DONT_CARE_BYTE])
@@ -53,7 +53,7 @@ class ERB4U:
         self.ser.write(cmd)
         num_of_relay = self.read_serial_data()
         time.sleep(self.TIME_DELAY)
-        return num_of_relay
+        return int(num_of_relay)
 
     def read_temperature_degree(self, board_num: int) -> float:
         cmd = bytes([board_num, 0x00, 0xA2, self.DONT_CARE_BYTE])
