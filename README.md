@@ -18,20 +18,20 @@
 
 
 <div style="text-align: center; margin: 10px;">
-    <img src="Images/ERB4U%20功能介绍.png" alt="alt text" style="width: 100%;">
+    <img src="Images/ERB4U-hardwre-intro.png" style="width: 80%;">
 </div>
 
 <div style="text-align: center; margin: 10px;">
-    <img src="Images/ERB4U%20USART通讯原理.png" alt="alt text" style="width: 100%;">
+    <img src="Images/ERB4U-USART-working-principle.png" style="width: 100%;">
 </div>
 
-<table>
+<table style="width:100%; text-align:center;">
   <tr>
-    <td style="text-align: center;">
-      <img src="Images/ERB4U-8%20产品正面.png" alt="ERB4U-8 产品正面" height="300">
+    <td style="width: 50%;">
+      <img src="Images/ERB4U-8-top.png" style="height: auto; margin: 10px 10px;">
     </td>
-    <td style="text-align: center;">
-      <img src="Images/ERB4U-8%20产品反面.png" alt="ERB4U-8 产品反面" height="300">
+    <td style="width: 50%;">
+      <img src="Images/ERB4U-8-bottom.png" style="height: auto; margin: 10px 10px;">
     </td>
   </tr>
 </table>
@@ -39,45 +39,51 @@
 
 ## 通讯协议
 ### 读指令
-<div style="text-align: center; margin: 10px;">
-    <img src="Images/ERB4U%20读指令.png" alt="alt text" style="width: 100%;">
+<div style="display: flex; justify-content: center;">
+  <img src="Images/ERB4U-command-read.png" style="max-width: 100%; height: auto; margin: 10px 10px;">
 </div>
 
 
 
 
 ### 写指令
-<div style="text-align: center; margin: 10px;">
-    <img src="Images/ERB4U%20写指令.png" alt="alt text" style="width: 100%;">
+<div style="display: flex; justify-content: center;">
+  <img src="Images/ERB4U-command-write.png" style="max-width: 100%; height: auto; margin: 10px 10px;">
 </div>
 
 
 
 ### 故障信息
-<div style="text-align: center; margin: 10px;">
-    <img src="Images/ERB4U%20故障信息.png" alt="alt text" style="width: 100%;">
+<div style="display: flex; justify-content: center;">
+  <img src="Images/ERB4U-error-msg.png" style="max-width: 100%; height: auto; margin: 10px 10px;">
 </div>
 
 
 ## 图纸
 ### 2D图纸
-[2D图纸：下载链接](https://example.com/path/to/2D_drawing.zip)
+[2D图纸：下载链接](https://altita-tech.com/wp-content/uploads/ERB4U/ERB4U-8%202D.zip)
+<table style="width:100%; text-align:center;">
+  <tr>
+    <td style="width: 50%; padding: 10px;">
+      <div style="display: flex; justify-content: center;">
+        <img src="Images/ERB4U-2D.png" style="max-width: 50%; height: auto; margin: 0 auto;">
+      </div>
+    </td>
+  </tr>
+</table>
 
-<div style="text-align: center; margin: 10px;">
-    <img src="Images/ERB4U%202D图纸.png" alt="alt text" style="width: 100%;">
-</div>
 
 
 
 ### 3D模型
-[3D模型：下载链接](https://example.com/path/to/2D_drawing.zip)
-<table>
+[3D模型：下载链接](https://altita-tech.com/wp-content/uploads/PBT223/PBT223%203D.zip)
+<table style="width:100%; text-align:center;">
   <tr>
-    <td style="text-align: center;">
-      <img src="Images/ERB4U%203D模型%201.png" alt="ERB4U-8 产品正面" height="300">
+    <td style="width: 40%;">
+      <img src="Images/ERB4U-3D-top.png" style="height: auto; margin: 10px 10px;">
     </td>
-    <td style="text-align: center;">
-      <img src="Images/ERB4U%203D模型%202.png" alt="ERB4U-8 产品反面" height="300">
+    <td style="width: 40%;">
+      <img src="Images/ERB4U-3D-bottom.png" style="height: auto; margin: 10px 10px;">
     </td>
   </tr>
 </table>
@@ -86,15 +92,19 @@
 
 
 ## 功能方框图
+<table style="width:100%; text-align:center;">
+  <tr>
+    <td style="padding: 10px;">
+      <img src="Images/ERB4U-relay-circuit.png" style="width: 80%; height: auto;">
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 10px;">
+      <img src="Images/ERB4U-block-diagram.png" style="width: 100%; height: auto;">
+    </td>
+  </tr>
+</table>
 
-<div style="text-align: center; margin: 10px;">
-  <img src="Images/ERB4U%20继电器电路.png" alt="alt text" style="width: 100%;">
-</p>
-
-
-<div style="text-align: center; margin: 10px;">
-  <img src="Images/ERB4U%20功能方块图.png" alt="alt text" style="width: 100%;">
-</p>
 
 
 
@@ -108,9 +118,10 @@
       <li><strong>技术支持：</strong> <a href="mailto:tech@altita-tech.com">tech@altita-tech.com</a></li>
     </ul>
   </div>
-  <div>
-    <img src="Images/Altita文字%20&%20Logo.png" alt="alt text" height="80">
-  </div>
+</div>
+
+<div style="display: flex; justify-content: center;">
+  <img src="Images/Altita&Logo.png" style="max-width: 100%; height: auto; margin: 20px 10px;">
 </div>
 
 
