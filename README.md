@@ -89,6 +89,9 @@
 </table>
 
 
+## 视频教程
+[![YouTube Video](https://img.youtube.com/vi/MFrZ_5qzL38/0.jpg)](https://www.youtube.com/watch?v=MFrZ_5qzL38)
+
 
 
 ## 功能方框图
