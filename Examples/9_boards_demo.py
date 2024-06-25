@@ -20,7 +20,7 @@ import time
 
 NUM_BOARDS = 9
 NUM_RELAY = 8
-COM_PORT = "COM4"
+COM_PORT = "COM10"
 relay_boards = ERB4U(port=COM_PORT)
 relay_boards.connect()
 
@@ -28,7 +28,7 @@ relay_boards.connect()
 """
 All ON, all OFF
 """
-for _ in range(2):
+for _ in range(9999):
     for board_id in range(NUM_BOARDS):
         # board_id = NUM_BOARDS - board_id - 1
         relay_boards.turn_on_all_relays(board_num=board_id)

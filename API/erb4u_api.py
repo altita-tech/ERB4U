@@ -7,7 +7,7 @@ class ERB4U:
         self.port = port
 
         self.DONT_CARE_BYTE = 0xFF
-        self.TIME_DELAY = 0.01
+        self.TIME_DELAY = 0.005
         
         self.ser = serial.Serial(self.port, 115200)
         self.ser.close()
@@ -34,7 +34,7 @@ class ERB4U:
             return None
 
     # Read commands ================================
-    def read_relay_state(self, board_num: int, relay_num: int) -> str:
+    def read_relay_state(self, board_num: int, relay_num: int) -> int:
         cmd = bytes([board_num, 0x00, relay_num, self.DONT_CARE_BYTE])
         self.ser.write(cmd)
         relay_state = self.read_serial_data()
@@ -48,7 +48,7 @@ class ERB4U:
         time.sleep(self.TIME_DELAY)
         return all_relays_states
 
-    def read_num_of_relay(self, board_num: int) -> str:
+    def read_num_of_relay(self, board_num: int) -> int:
         cmd = bytes([board_num, 0x00, 0xA1, self.DONT_CARE_BYTE])
         self.ser.write(cmd)
         num_of_relay = self.read_serial_data()
