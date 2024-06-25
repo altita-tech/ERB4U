@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ERB API & Example Code
 
 [![English](https://img.shields.io/badge/lang-english-red.svg)](README.md) 
